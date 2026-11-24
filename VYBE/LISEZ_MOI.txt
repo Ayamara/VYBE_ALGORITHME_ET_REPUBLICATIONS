@@ -1,0 +1,9 @@
+VYBE - Version enrichie, basée sur VYBE_CORRECTIONS_PROFIL_BIBLIOTHEQUE.zip
+
+Ajouts : notifications fictives espacées (45 secondes, 5 maximum par profil), profils créateurs détaillés, vues cohérentes avec les likes fictifs, espace animateur et révélation pédagogique.
+
+Espace animateur : Profil > Espace animateur. Code DEMO : 2468. Attention : ce code n’est PAS une sécurité réelle. Le tableau de bord n’est pas connecté à un serveur ; les données sont celles de ce navigateur.
+
+Toutes les fonctions existantes ont été conservées dans le script d’origine, avec des ajouts ciblés.
+
+Les vidéos MP4 ne sont pas incluses : conserver le dossier videos/ et ses 84 fichiers.

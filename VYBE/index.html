@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080808">
+
+    <title>VYBE</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main id="app">
+
+    <!-- FEED -->
+    <section class="feed">
+        <article class="reel">
+
+            <!-- VIDÉO -->
+            <div class="reel-media">
+
+                <video
+                    class="reel-video"
+                    
+                    autoplay
+                    muted
+                    playsinline
+                    preload="auto">
+                </video>
+
+                <div class="video-loader">
+                    Chargement...
+                </div>
+
+                <div class="play-indicator">▶</div>
+                <div class="heart-animation">♥</div>
+
+            </div>
+
+            <div class="reel-overlay"></div>
+
+            <!-- HEADER -->
+            <header class="reel-header">
+
+                <div class="brand">VYBE</div>
+
+                <div class="feed-tabs">
+                    <button
+                        type="button"
+                        class="feed-tab active"
+                        data-feed="for-you">
+                        Pour toi
+                    </button>
+
+                    <button
+                        type="button"
+                        class="feed-tab"
+                        data-feed="following">
+                        Abonnements
+                    </button>
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="header-button"
+                        data-open-page="search"
+                        aria-label="Recherche">
+                        🔍
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-button notification-button"
+                        data-open-page="notifications"
+                        aria-label="Notifications">
+                        ♡
+                        <span class="notification-dot"></span>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- SON -->
+            <button
+                type="button"
+                class="sound-button"
+                aria-label="Activer ou désactiver le son">
+                🔇
+            </button>
+
+            <!-- INFORMATIONS -->
+            <div class="reel-information">
+
+                <div class="account">
+
+                    <button
+                        type="button"
+                        class="profile-picture"
+                        data-open-creator
+                        aria-label="Voir le profil du créateur">
+                    </button>
+
+                    <button
+                        type="button"
+                        class="username"
+                        data-open-creator>
+                        @AhO
+                    </button>
+
+                    <button type="button" class="follow-button">
+                        Suivre
+                    </button>
+
+                </div>
+
+                <p class="caption">
+                    
+                </p>
+
+                <p class="hashtags">
+                    #VYBE #societe #debat
+                </p>
+
+            </div>
+
+            <!-- ACTIONS -->
+            <aside class="reel-actions">
+
+                <button
+                    type="button"
+                    class="action-button"
+                    data-action="like"
+                    aria-label="Aimer cette vidéo">
+
+                    <span class="action-icon">♡</span>
+                    <span class="action-label">0</span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="action-button"
+                    data-action="comment"
+                    aria-label="Afficher les commentaires">
+
+                    <span class="action-icon">○</span>
+                    <span class="action-label">0</span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="action-button"
+                    data-action="share"
+                    aria-label="Partager cette vidéo">
+
+                    <span class="action-icon">↗</span>
+                    <span class="action-label">Partager</span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="action-button"
+                    data-action="more"
+                    aria-label="Plus d'options">
+
+                    <span class="action-icon">⋯</span>
+
+                </button>
+
+            </aside>
+
+            <!-- PROGRESSION -->
+            <div class="feed-progress">
+                <div class="feed-progress-bar"></div>
+            </div>
+
+            <!-- NAVIGATION -->
+            <nav class="bottom-navigation">
+
+                <button
+                    type="button"
+                    class="nav-button active"
+                    data-page="home">
+
+                    <span class="nav-icon">⌂</span>
+                    <span class="nav-label">Home</span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="nav-button"
+                    data-page="friends">
+
+                    <span class="nav-icon">♡</span>
+                    <span class="nav-label">Friends</span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="create-button"
+                    data-page="create"
+                    aria-label="Créer">
+
+                    <span>+</span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="nav-button"
+                    data-page="messages">
+
+                    <span class="nav-icon">💬</span>
+                    <span class="nav-label">Messages</span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="nav-button"
+                    data-page="profile">
+
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-label">Profile</span>
+
+                </button>
+
+            </nav>
+
+        </article>
+    </section>
+
+    <!-- RECHERCHE -->
+    <section class="page" id="search-page">
+
+        <button type="button" class="close-page" aria-label="Fermer">×</button>
+
+        <h1>Recherche</h1>
+
+        <div class="search-input-wrapper">
+            <span>🔍</span>
+
+            <input
+                type="text"
+                class="search-input"
+                placeholder="Rechercher un compte ou un sujet"
+                autocomplete="off">
+        </div>
+
+        <div class="search-results"></div>
+
+    </section>
+
+    <!-- NOTIFICATIONS -->
+    <section class="page" id="notifications-page">
+
+        <button type="button" class="close-page" aria-label="Fermer">×</button>
+
+        <h1>Notifications</h1>
+
+        <div class="notification-list"></div>
+
+    </section>
+
+    <!-- MESSAGES -->
+    <section class="page" id="messages-page">
+
+        <button type="button" class="close-page" aria-label="Fermer">×</button>
+
+        <h1>Messages</h1>
+
+        <div class="empty-page">
+            Aucun message pour le moment.
+        </div>
+
+    </section>
+
+    <!-- FRIENDS -->
+    <section class="page" id="friends-page">
+
+        <button type="button" class="close-page" aria-label="Fermer">×</button>
+
+        <h1>Friends</h1>
+
+        <div class="friends-list"></div>
+
+    </section>
+
+    <!-- CREATE -->
+    <section class="page" id="create-page">
+
+        <button type="button" class="close-page" aria-label="Fermer">×</button>
+
+        <h1>Create</h1>
+
+        <div class="create-options">
+
+            <button type="button">
+                <strong>🎥</strong>
+                <span>Vidéo</span>
+            </button>
+
+            <button type="button">
+                <strong>📷</strong>
+                <span>Photo</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- PROFIL UTILISATEUR -->
+    <section class="page" id="profile-page">
+
+        <button type="button" class="close-page" aria-label="Fermer">×</button>
+
+        <div class="profile-header">
+
+            <div class="big-profile-picture"></div>
+
+            <h1>@bagneux92i</h1>
+
+            <button type="button" class="edit-profile">
+                Modifier le profil
+            </button>
+
+        </div>
+
+        <div class="profile-stats">
+
+            <div>
+                <strong>0</strong>
+                <span>Vidéos</span>
+            </div>
+
+            <div>
+                <strong>0</strong>
+                <span>J'aime reçus</span>
+            </div>
+
+            <div>
+                <strong>0</strong>
+                <span>Abonnements</span>
+            </div>
+
+        </div>
+
+        <div class="profile-content">
+            <h2>Mes vidéos</h2>
+        </div>
+
+    </section>
+
+    <!-- PROFIL CRÉATEUR -->
+    <section class="page" id="creator-page">
+
+        <button type="button" class="close-page" aria-label="Fermer">×</button>
+
+        <div class="creator-header">
+
+            <div class="creator-picture"></div>
+
+            <h1 class="creator-username">@AhO</h1>
+
+            <button type="button" class="creator-follow-button">
+                Suivre
+            </button>
+
+        </div>
+
+        <div class="creator-stats">
+
+            <div>
+                <strong class="creator-video-count">1</strong>
+                <span>Vidéos</span>
+            </div>
+
+            <div>
+                <strong class="creator-followers">0</strong>
+                <span>Abonnés</span>
+            </div>
+
+        </div>
+
+        <div class="creator-videos"></div>
+
+    </section>
+
+    <!-- COMMENTAIRES -->
+    <div class="bottom-sheet" id="comments-sheet">
+
+        <div class="sheet-header">
+
+            <strong>Commentaires</strong>
+
+            <button
+                type="button"
+                class="close-sheet"
+                aria-label="Fermer les commentaires">
+                ×
+            </button>
+
+        </div>
+
+        <div class="comments-list"></div>
+
+        <div class="comment-input-wrapper">
+
+            <input
+                type="text"
+                class="comment-input"
+                placeholder="Ajouter un commentaire..."
+                maxlength="1000"
+                autocomplete="off">
+
+            <button
+                type="button"
+                class="send-comment"
+                aria-label="Envoyer le commentaire">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- MENU D'ACTIONS -->
+    <div class="action-menu" id="action-menu">
+
+        <button type="button" data-menu-action="save">
+            Enregistrer
+        </button>
+
+        <button type="button" data-menu-action="not-interested">
+            Pas intéressé
+        </button>
+
+        <button type="button" data-menu-action="report">
+            Signaler
+        </button>
+
+        <button type="button" data-menu-action="close">
+            Annuler
+        </button>
+
+    </div>
+
+    <!-- MESSAGE TEMPORAIRE -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
